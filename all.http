@@ -1,0 +1,146 @@
+@TOEKN = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZWQ0MGJmOWU1MTg3ZThmYmYwZWYzMCIsImlhdCI6MTcyOTI1Nzg4MywiZXhwIjoxNzI5MjYxNDgzfQ.laPC8m_FyNaq01J19jhpUAUGt9FxxDH-jeRsjhlwJ6Q
+
+
+###
+POST http://localhost:5000/api/auth/register HTTP/1.1
+Content-type: application/json
+
+{
+    "username":"Test User",
+    "email":"test@mailinator.com",
+    "password": "123456",
+    "userType":"Admin"
+}
+
+###
+POST http://localhost:5000/api/auth/login HTTP/1.1
+Content-type: application/json
+
+{
+    "email":"testuser3@gmail.com",
+    "password": "123456"
+}
+
+###
+POST http://localhost:5000/api/user HTTP/1.1
+Content-type: application/json
+Authorization: {{TOEKN}}
+
+{
+    "username":"Test",
+    "email":"test@gmail.com",
+    "password": "123456",
+    "userType":"Admin"
+}
+
+###
+GET  http://localhost:5000/api/user HTTP/1.1
+Content-type: application/json
+Authorization: {{TOEKN}}
+
+###
+GET  http://localhost:5000/api/user/67124bc4f6b5daf4b1063d83 HTTP/1.1
+Content-type: application/json
+Authorization: {{TOEKN}}
+
+###
+PUT http://localhost:5000/api/user/67124bc4f6b5daf4b1063d83 HTTP/1.1
+Content-type: application/json
+Authorization: {{TOEKN}}
+
+{
+    "username":"Test User11111111",
+    "email":"test@gmail.com",
+    "password": "1234567",
+    "userType":"Admin",
+    "isActive": false,
+    "isDeleted": false,
+    "isDisabled": false
+}
+
+###
+DELETE http://localhost:5000/api/user/67124bc4f6b5daf4b1063d83 HTTP/1.1
+Content-type: application/json
+Authorization: {{TOEKN}}
+
+###
+POST  http://localhost:5000/api/company HTTP/1.1
+Content-type: application/json
+Authorization: {{TOEKN}}
+
+{
+    "companyName":"NewTechnology",
+    "email":"newtechnology@mailinator.com",
+    "contactNumber": "12345631313",
+    "website":"https://www.newtechnology.com"
+}
+
+###
+GET http://localhost:5000/api/company HTTP/1.1
+Content-type: application/json
+Authorization: {{TOEKN}}
+
+
+###
+PUT http://localhost:5000/api/company/67124bc4f6b5daf4b1063d83 HTTP/1.1
+Content-type: application/json
+Authorization: {{TOEKN}}
+
+{
+    "companyName":"Test Software Development Company",
+    "email":"test@gmail.com",
+    "contactNumber": "12345631313",
+    "website":"https://www.testsoftware.com"
+}
+
+###
+POST  http://localhost:5000/api/sports HTTP/1.1
+Content-type: application/json
+Authorization: {{TOEKN}}
+
+{
+    "name":"Casino",
+    "sportId":"10000",
+    "type":"Indoor",
+    "players": "2",
+    "country":"India"
+}
+
+###
+GET http://localhost:5000/api/sports HTTP/1.1
+Content-type: application/json
+Authorization: {{TOEKN}}
+
+###
+GET http://localhost:5000/api/sports/671201a4085f8e6eb4c9b534 HTTP/1.1
+Content-type: application/json
+Authorization: {{TOEKN}}
+
+###
+PUT http://localhost:5000/api/sports/6711f1771fb47b0849597adc HTTP/1.1
+Content-type: application/json
+Authorization: {{TOEKN}}
+
+{
+    "name":"Cricket",
+    "sportId":"4",
+    "type":"Outdoor",
+    "players": "11",
+    "country":"India"
+}
+
+###
+DELETE http://localhost:5000/api/sports/6711f1771fb47b0849597adc HTTP/1.1
+Content-type: application/json
+Authorization: {{TOEKN}}
+
+###
+GET http://localhost:5000/api/activity HTTP/1.1
+Content-type: application/json
+Authorization: {{TOEKN}}
+
+###
+GET http://localhost:5000/api/activity/670fba5e8be534171ff2ffc3 HTTP/1.1
+Content-type: application/json
+Authorization: {{TOEKN}}
+
